@@ -1,0 +1,74 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstdlib>
+
+using namespace std;
+
+class Calculator {
+public:
+    static double Cal(string fun, const vector<double>& numbers) {
+        if (numbers.empty()) {
+            cerr << "Error: No numbers provided for calculation." << endl;
+            return 0.0;
+        }
+
+        double result = numbers[0];
+        
+        if (fun == "add") {
+            for (size_t i = 1; i < numbers.size(); ++i) {
+                result += numbers[i];
+            }
+        } else if (fun == "minus") {
+            for (size_t i = 1; i < numbers.size(); ++i) {
+                result -= numbers[i];
+            }
+        } else if (fun == "multiply") {
+            for (size_t i = 1; i < numbers.size(); ++i) {
+                result *= numbers[i];
+            }
+        } else if (fun == "divide") {
+            for (size_t i = 1; i < numbers.size(); ++i) {
+                if (numbers[i] == 0.0) {
+                    cerr << "Error: Division by zero encountered." << endl;
+                    return 0.0;
+                }
+                result /= numbers[i];
+            }
+        } else {
+            cerr << "Error: Unknown operation '" << fun << "'" << endl;
+            return 0.0;
+        }
+
+        return result;
+    }
+};
+
+int main(int argc, char *argv[]) {
+    if (argc < 3) {
+        cerr << "Usage: " << argv[0] << " <operation> <filename>" << endl;
+        return 1;
+    }
+
+    string operation = argv[1];
+    string filename = argv[2];
+
+    ifstream infile(filename);
+    if (!infile) {
+        cerr << "Error: Unable to open file " << filename << endl;
+        return 1;
+    }
+
+    vector<double> numbers;
+    double number;
+    while (infile >> number) {
+        numbers.push_back(number);
+    }
+    infile.close();
+
+    double result = Calculator::Cal(operation, numbers);
+    cout << "Result of operation '" << operation << "' is: " << result << endl;
+
+    return 0;
+}
