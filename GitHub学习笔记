@@ -1,0 +1,44 @@
+GitHub 学习笔记
+一、GitHub简介
+GitHub是全球最大的代码托管平台，开发者可以在这里托管自己的项目代码，与他人协作，分享代码，发现新的开源项目。它不仅支持Git这一分布式版本控制系统，还提供了丰富的社交功能和项目管理工具。
+二、注册GitHub账号
+访问GitHub官网：在浏览器中打开GitHub.com。
+  注册账号：
+    点击页面右上角的“Sign up”（注册）按钮。
+    可以选择使用邮箱注册
+  输入用户名、邮箱地址、密码等信息完成注册。
+  用户名在GitHub上是唯一的，且之后不易更改，请慎重选择。
+  验证邮箱：注册后，GitHub会发送一封验证邮件到你的邮箱，点击邮件中的链接完成验证。
+三、下载并安装Git
+  访问Git官网：Git - Fast Version Control System。
+  下载Git：根据你的操作系统（Windows、macOS、Linux）选择合适的版本进行下载。
+  安装Git：
+Windows：双击下载的.exe文件，按照提示完成安装。
+  配置Git：
+    打开终端（或命令提示符）。
+    设置用户名和邮箱地址（这将用于你的提交记录）：
+    bash
+    git config --global user.name "你的用户名"
+    git config --global user.email "你的邮箱"
+四、使用GitHub
+  创建仓库（Repository）：
+    登录GitHub后，点击页面右上角的“+”号，选择“New repository”（新建仓库）。
+填写仓库名称、描述、选择是否公开等选项，点击“Create repository”创建。
+  克隆仓库到本地：
+    在仓库页面，点击“Code”按钮，复制仓库的HTTPS或SSH URL。
+打开终端，使用git clone命令将仓库克隆到本地：
+    bash
+    git clone 复制的URL
+  添加文件并提交：
+    在本地仓库目录下，添加你想要提交的文件。
+    使用git add .命令将所有更改添加到暂存区（或git add 文件名指定文件）。
+    使用git commit -m "提交信息"命令提交更改到本地仓库。
+  推送更改到GitHub：
+    使用git push origin main（或你的默认分支名，如master，GitHub已默认改为main）将更改推送到GitHub。
+  协作与分支：
+    GitHub鼓励使用分支进行开发，你可以通过GitHub界面或Git命令创建分支。
+    完成后，可以发起Pull Request（PR）请求合并到主分支。
+五、学习资源
+GitHub官方文档：GitHub提供了丰富的官方文档和教程，是学习GitHub的绝佳资源。
+在线课程：Coursera、Udemy等平台上有许多关于Git和GitHub的在线课程。
+社区和论坛：Stack Overflow、Reddit等社区是解决问题和获取帮助的好地方。
