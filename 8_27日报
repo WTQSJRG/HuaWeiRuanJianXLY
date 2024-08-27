@@ -1,0 +1,10 @@
+今天我继续尝试使用微信开发者工具。
+今天我利用AI尝试实现小程序页面跳转。
+   使用navigator组件
+   navigator组件是小程序中专门用来处理页面跳转的组件，可以在WXML文件中直接使用。
+   步骤：
+   在WXML文件中添加navigator组件：
+   html
+   <navigator url="/pages/targetPage/targetPage">跳转到目标页面</navigator>
+   其中，url属性指定了要跳转的页面路径。
+经过实现，这是一种行之有效的方法。
