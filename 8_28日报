@@ -1,0 +1,20 @@
+今天继续学习微信开发者工具，并商讨了一下小组分工。
+今天我尝试运用代码实现用户登录这一功能。利用AI技术找到了一种方法。步骤比较繁琐，今天尝试了第一步。
+一、获取用户登录凭证（code）
+使用wx.login接口：
+在小程序的app.js或其他合适的文件中，调用wx.login()接口获取用户的登录凭证（code）。这个code是一个临时登录凭证，用于后续换取用户的openId和sessionKey。
+示例代码（在app.js的onLaunch函数中调用）：
+javascript
+App({
+  onLaunch: function() {
+    wx.login({
+      success: function(res) {
+        if (res.code) {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        } else {
+          console.log('登录失败！' + res.errMsg);
+        }
+      }
+    });
+  }
+});
